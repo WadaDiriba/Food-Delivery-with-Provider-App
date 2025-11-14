@@ -1,8 +1,6 @@
 
-
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-
-
 import 'package:food_deliveryapp/models/onboard_model.dart';
 
 class OnboardScreen extends StatefulWidget {
@@ -36,45 +34,56 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   children: [
 
                     Positioned(
+
+                      top: -70,
+                      right: 0,
+                      left: 0,
     
-                      child:Image.asset(onboards[index].image,
-                      width: 600,
-                      height: 600,
-                      fit: BoxFit.contain,    
+                      child:FadeInDown(
+
+                        delay: Duration(milliseconds: 500),
+
+
+                        child: Image.asset(onboards[index].image,
+                        width: 600,
+                        height: 600,
+                        fit: BoxFit.contain,    
+                        ),
                       ),
                       ),
 
-                      Positioned(
-                        
+                      Positioned(  
                         top: MediaQuery.of(context).size.height/1.9,
-                        child: Padding(
+                        child: FadeInUp(
 
+                          delay: Duration(milliseconds: 500),
 
-                          padding: const EdgeInsets.symmetric(horizontal: 25),
-                          child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(onboards[index].text1,
-                            style: TextStyle(
-                             color: Colors.white,
-                             fontSize: 24,
-                             fontWeight: FontWeight.bold,
-                           ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 25),
+                            child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(onboards[index].text1,
+                              style: TextStyle(
+                               color: Colors.white,
+                               fontSize: 24,
+                               fontWeight: FontWeight.bold,
+                             ),
+                                                  ),
+                          
+                                       SizedBox(height: 25),
+                            
+                                       Text(onboards[index].text2,
+                                        style: TextStyle(
+                                         color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                            
+                                         fontSize: 24,
+                          
                                                 ),
-                          
-                                     SizedBox(height: 25),
-                          
-                                     Text(onboards[index].text2,
-                                      style: TextStyle(
-                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                          
-                                       fontSize: 24,
-
-                                              ),
-                                         ),
-                          
-                            ],
+                                           ),
+                              ],
+                            ),
                           ),
                         )
                       )
@@ -93,8 +102,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                         (index)=>AnimatedContainer(
                       
                       duration: Duration(seconds: 4,
-                           
-                      
+                              
                       ),
 
                       height: 4,
@@ -109,8 +117,6 @@ class _OnboardScreenState extends State<OnboardScreen> {
 
                         borderRadius: BorderRadius.circular(15),
 
-
-
                       ),
                       ),
                       )
@@ -118,19 +124,16 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 )
                 ),
 
-                Positioned(
+                 Positioned(
                   bottom: 30,
                      
                   child: SizedBox(height: 75,
                 
                 child: Padding(padding: EdgeInsets.symmetric(horizontal: 15,
-
-                
                 ),
 
                 child: MaterialButton(onPressed:() {
-
-                  
+                
                 },
                 color:Color.fromRGBO(255, 144, 59, 1),
                 shape: RoundedRectangleBorder(
@@ -143,18 +146,16 @@ class _OnboardScreenState extends State<OnboardScreen> {
 
                   child: Text("Get Started",
                   style: TextStyle(
+
                     fontSize: 24,
                     color: Colors.white,
-                    
+
                   ),
                   ),
                 ),
-
-
                 ),
                 ),
-                ),
-                
+                ), 
                 
                 )
             ],
