@@ -28,3 +28,7 @@ flutter:
     - assets/foodDelivery/onboard1.png
     - assets/foodDelivery/onboard2.png
     - assets/foodDelivery/onboard3.png
+    - assets/foodDelivery/pizza.png
+    - assets/foodDelivery/burger.png
+    - assets/foodDelivery/coffee.png
+    - assets/foodDelivery/donut.png
