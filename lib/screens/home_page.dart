@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_deliveryapp/models/category_model.dart';
-
+import 'package:food_deliveryapp/models/product_mode.dart';
+// i HAVE STOPED THIS CODE AT 25:44 IN THE VIDEO TUTORIAL
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -18,6 +19,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
 
         crossAxisAlignment: CrossAxisAlignment.start,
+
 
         children: [
          
@@ -163,9 +165,32 @@ class _HomePageState extends State<HomePage> {
               letterSpacing: -0.2,
 
           ),
-          )
+          )     
 
-          ) 
+          ),
+
+          SizedBox(height: 20,),
+          SingleChildScrollView(
+
+            scrollDirection: Axis.horizontal,
+
+            physics: BouncingScrollPhysics(),
+            child:Row(
+
+              children: [
+
+                ...List.generate(ProductModel.products.length,
+                 (index) =>Padding(padding: index==0
+                 ? EdgeInsets.only(left: 25.0,right: 16.0)
+                 : EdgeInsets.only(right: 25.0),
+                ),
+                
+                )
+                // we will add food cards here later
+              ],
+              
+            ) ,
+          )
             
           ],
           )
