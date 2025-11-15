@@ -157,6 +157,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                   style: TextStyle(
 
                     fontSize: 24,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
 
                   ),
