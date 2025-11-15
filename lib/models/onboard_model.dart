@@ -9,7 +9,6 @@ class Onboard {
     required this.text2,
   });
 }
-
 List<Onboard> onboards = [
   Onboard(
     image: "assets/foodDelivery/onboard1.png", 

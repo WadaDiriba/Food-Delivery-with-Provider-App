@@ -2,6 +2,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:food_deliveryapp/models/onboard_model.dart';
+import 'package:food_deliveryapp/screens/main_page.dart';
 
 class OnboardScreen extends StatefulWidget {
 
@@ -93,34 +94,38 @@ class _OnboardScreenState extends State<OnboardScreen> {
               }),
               Positioned(
                 bottom: 170,
-                child:Row(
-
-                  children: [
-
-                    ...List.generate(onboards.length,
-                      
-                        (index)=>AnimatedContainer(
-                      
-                      duration: Duration(seconds: 4,
-                              
-                      ),
-
-                      height: 4,
-                      width: 5,
-                      margin: EdgeInsets.only(right: 10, ),
-
-                      decoration: BoxDecoration(
-
-                        color: currentIndex==index
-                        ?Colors.white
-                        :Colors.white.withOpacity(0.5),
-
-                        borderRadius: BorderRadius.circular(15),
-
-                      ),
-                      ),
-                      )
-                  ],
+                child:FadeInUp(
+                  delay: Duration(milliseconds: 500),
+                  
+                  child: Row(
+                  
+                    children: [
+                  
+                      ...List.generate(onboards.length,
+                        
+                          (index)=>AnimatedContainer(
+                        
+                        duration: Duration(seconds: 4,
+                                
+                        ),
+                  
+                        height: 4,
+                        width: 5,
+                        margin: EdgeInsets.only(right: 10, ),
+                  
+                        decoration: BoxDecoration(
+                  
+                          color: currentIndex==index
+                          ?Colors.white
+                          :Colors.white.withOpacity(0.5),
+                  
+                          borderRadius: BorderRadius.circular(15),
+                  
+                        ),
+                        ),
+                        )
+                    ],
+                  ),
                 )
                 ),
 
@@ -133,6 +138,10 @@ class _OnboardScreenState extends State<OnboardScreen> {
                 ),
 
                 child: MaterialButton(onPressed:() {
+
+                  Navigator.push(context,
+                   MaterialPageRoute(
+                  builder: (context)=>MainPage()));
                 
                 },
                 color:Color.fromRGBO(255, 144, 59, 1),
